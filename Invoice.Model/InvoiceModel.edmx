@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="invoiceDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="invoiceDBModelStoreContainer">
+          <EntitySet Name="Article" EntityType="invoiceDBModel.Store.Article" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Invoice" EntityType="invoiceDBModel.Store.Invoice" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Param" EntityType="invoiceDBModel.Store.Param" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="Article$InvoiceArticle" Association="invoiceDBModel.Store.Article$InvoiceArticle">
+            <End Role="Invoice" EntitySet="Invoice" />
+            <End Role="Article" EntitySet="Article" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Article">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceId" Type="int" Nullable="false" />
+          <Property Name="ArtName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Units" Type="nvarchar" MaxLength="50" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="NetAmount" Type="money" Nullable="false" />
+          <Property Name="Tax" Type="money" Nullable="false" />
+          <Property Name="TaxRate" Type="float" Nullable="false" />
+          <Property Name="TaxAmount" Type="float" Nullable="false" />
+          <Property Name="GrossAmount" Type="money" Nullable="false" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" />
+          <Property Name="CdNumber" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceNum" Type="nvarchar" MaxLength="50" />
+          <Property Name="InvoiceDate" Type="datetime2" Precision="0" />
+          <Property Name="SupplierName" Type="nvarchar" MaxLength="250" />
+          <Property Name="SupplierAddr" Type="nvarchar" MaxLength="100" />
+          <Property Name="SupplierINN" Type="nvarchar" MaxLength="20" />
+          <Property Name="SupplierKPP" Type="nvarchar" MaxLength="20" />
+          <Property Name="DeliverFrom" Type="nvarchar" MaxLength="250" />
+          <Property Name="DeliverTo" Type="nvarchar" MaxLength="250" />
+          <Property Name="OrderNum" Type="nvarchar" MaxLength="50" />
+          <Property Name="OrderDate" Type="datetime2" Precision="0" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="100" />
+          <Property Name="CustomerAddr" Type="nvarchar" MaxLength="100" />
+          <Property Name="CustomerINN" Type="nvarchar" MaxLength="20" />
+          <Property Name="CustomerKPP" Type="nvarchar" MaxLength="20" />
+          <Property Name="OpCode" Type="nvarchar" MaxLength="2" />
+          <Property Name="OptionField" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Param">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="SupplierName" Type="nvarchar" MaxLength="250" />
+          <Property Name="SupplierAddr" Type="nvarchar" MaxLength="250" />
+          <Property Name="SupplierINN" Type="nvarchar" MaxLength="50" />
+          <Property Name="SupplierKPP" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeliverFrom" Type="nvarchar" MaxLength="250" />
+          <Property Name="InvNumPref" Type="nvarchar" MaxLength="10" />
+          <Property Name="InvNumCnt" Type="int" />
+          <Property Name="InvNumYear" Type="smallint" />
+        </EntityType>
+        <Association Name="Article$InvoiceArticle">
+          <End Role="Invoice" Type="invoiceDBModel.Store.Invoice" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Article" Type="invoiceDBModel.Store.Article" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Invoice">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Article">
+              <PropertyRef Name="InvoiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="invoiceDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="invoiceDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Articles" EntityType="invoiceDBModel.Article" />
+          <EntitySet Name="Invoices" EntityType="invoiceDBModel.Invoice" />
+          <EntitySet Name="Params" EntityType="invoiceDBModel.Param" />
+          <AssociationSet Name="Article_InvoiceArticle" Association="invoiceDBModel.Article_InvoiceArticle">
+            <End Role="Invoice" EntitySet="Invoices" />
+            <End Role="Article" EntitySet="Articles" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Article">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="InvoiceId" Nullable="false" />
+          <Property Type="String" Name="ArtName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Units" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Quantity" Nullable="false" />
+          <Property Type="Decimal" Name="Price" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="NetAmount" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="Tax" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Double" Name="TaxRate" Nullable="false" />
+          <Property Type="Double" Name="TaxAmount" Nullable="false" />
+          <Property Type="Decimal" Name="GrossAmount" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="String" Name="Country" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CdNumber" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Invoice" Relationship="invoiceDBModel.Article_InvoiceArticle" FromRole="Article" ToRole="Invoice" />
+        </EntityType>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="InvoiceNum" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="InvoiceDate" />
+          <Property Type="String" Name="SupplierName" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SupplierAddr" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SupplierINN" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SupplierKPP" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DeliverFrom" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DeliverTo" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="OrderNum" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="OrderDate" />
+          <Property Type="String" Name="CustomerName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerAddr" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerINN" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerKPP" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="OpCode" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="OptionField" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Articles" Relationship="invoiceDBModel.Article_InvoiceArticle" FromRole="Invoice" ToRole="Article" />
+        </EntityType>
+        <EntityType Name="Param">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="SupplierName" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SupplierAddr" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SupplierINN" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SupplierKPP" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DeliverFrom" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="InvNumPref" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="InvNumCnt" />
+          <Property Type="Int16" Name="InvNumYear" />
+        </EntityType>
+        <Association Name="Article_InvoiceArticle">
+          <End Type="invoiceDBModel.Invoice" Role="Invoice" Multiplicity="1" />
+          <End Type="invoiceDBModel.Article" Role="Article" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Invoice">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Article">
+              <PropertyRef Name="InvoiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="invoiceDBModelStoreContainer" CdmEntityContainer="invoiceDBEntities">
+  <EntitySetMapping Name="Articles">
+            <EntityTypeMapping TypeName="invoiceDBModel.Article">
+              <MappingFragment StoreEntitySet="Article">
+                <ScalarProperty Name="CdNumber" ColumnName="CdNumber" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="GrossAmount" ColumnName="GrossAmount" />
+                <ScalarProperty Name="TaxAmount" ColumnName="TaxAmount" />
+                <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+                <ScalarProperty Name="Tax" ColumnName="Tax" />
+                <ScalarProperty Name="NetAmount" ColumnName="NetAmount" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Units" ColumnName="Units" />
+                <ScalarProperty Name="ArtName" ColumnName="ArtName" />
+                <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Invoices">
+            <EntityTypeMapping TypeName="invoiceDBModel.Invoice">
+              <MappingFragment StoreEntitySet="Invoice">
+                <ScalarProperty Name="OptionField" ColumnName="OptionField" />
+                <ScalarProperty Name="OpCode" ColumnName="OpCode" />
+                <ScalarProperty Name="CustomerKPP" ColumnName="CustomerKPP" />
+                <ScalarProperty Name="CustomerINN" ColumnName="CustomerINN" />
+                <ScalarProperty Name="CustomerAddr" ColumnName="CustomerAddr" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="OrderNum" ColumnName="OrderNum" />
+                <ScalarProperty Name="DeliverTo" ColumnName="DeliverTo" />
+                <ScalarProperty Name="DeliverFrom" ColumnName="DeliverFrom" />
+                <ScalarProperty Name="SupplierKPP" ColumnName="SupplierKPP" />
+                <ScalarProperty Name="SupplierINN" ColumnName="SupplierINN" />
+                <ScalarProperty Name="SupplierAddr" ColumnName="SupplierAddr" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="InvoiceNum" ColumnName="InvoiceNum" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Params">
+            <EntityTypeMapping TypeName="invoiceDBModel.Param">
+              <MappingFragment StoreEntitySet="Param">
+                <ScalarProperty Name="InvNumYear" ColumnName="InvNumYear" />
+                <ScalarProperty Name="InvNumCnt" ColumnName="InvNumCnt" />
+                <ScalarProperty Name="InvNumPref" ColumnName="InvNumPref" />
+                <ScalarProperty Name="DeliverFrom" ColumnName="DeliverFrom" />
+                <ScalarProperty Name="SupplierKPP" ColumnName="SupplierKPP" />
+                <ScalarProperty Name="SupplierINN" ColumnName="SupplierINN" />
+                <ScalarProperty Name="SupplierAddr" ColumnName="SupplierAddr" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="InvoiceModel">
+        <EntityTypeShape EntityType="invoiceDBModel.Article" Width="1.5" PointX="3" PointY="1.375" Height="3.7109993489583388" />
+        <EntityTypeShape EntityType="invoiceDBModel.Invoice" Width="1.5" PointX="0.75" PointY="1" Height="4.4802050781250031" />
+        <EntityTypeShape EntityType="invoiceDBModel.Param" Width="1.5" PointX="5.75" PointY="0.75" Height="2.7494921875000031" />
+        <AssociationConnector Association="invoiceDBModel.Article_InvoiceArticle" >
+          <ConnectorPoint PointX="2.25" PointY="3.2304996744791694" />
+          <ConnectorPoint PointX="3" PointY="3.2304996744791694" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

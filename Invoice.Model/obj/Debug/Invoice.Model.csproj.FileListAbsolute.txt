@@ -1,0 +1,9 @@
+K:\Docs\work\Projects\C#\Invoice\Invoce.Model\bin\Debug\Invoce.Model.dll
+K:\Docs\work\Projects\C#\Invoice\Invoce.Model\bin\Debug\Invoce.Model.pdb
+K:\Docs\work\Projects\C#\Invoice\Invoce.Model\obj\Debug\Invoce.Model.dll
+K:\Docs\work\Projects\C#\Invoice\Invoce.Model\obj\Debug\Invoce.Model.pdb
+K:\Docs\work\Projects\C#\Invoice\Invoice.Model\bin\Debug\Invoice.Model.dll.config
+K:\Docs\work\Projects\C#\Invoice\Invoice.Model\bin\Debug\Invoice.Model.dll
+K:\Docs\work\Projects\C#\Invoice\Invoice.Model\bin\Debug\Invoice.Model.pdb
+K:\Docs\work\Projects\C#\Invoice\Invoice.Model\obj\Debug\Invoice.Model.dll
+K:\Docs\work\Projects\C#\Invoice\Invoice.Model\obj\Debug\Invoice.Model.pdb

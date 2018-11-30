@@ -1,0 +1,16 @@
+K:\Docs\work\Projects\C#\Invoice\Invoice\bin\Release\template\xlBlankInvoice.xls
+K:\Docs\work\Projects\C#\Invoice\Invoice\bin\Release\Invoice.exe.config
+K:\Docs\work\Projects\C#\Invoice\Invoice\bin\Release\Invoice.exe
+K:\Docs\work\Projects\C#\Invoice\Invoice\bin\Release\Invoice.pdb
+K:\Docs\work\Projects\C#\Invoice\Invoice\bin\Release\Invoice.Model.dll
+K:\Docs\work\Projects\C#\Invoice\Invoice\bin\Release\Invoice.Model.pdb
+K:\Docs\work\Projects\C#\Invoice\Invoice\bin\Release\Invoice.Model.dll.config
+K:\Docs\work\Projects\C#\Invoice\Invoice\obj\x86\Release\Invoice.csprojAssemblyReference.cache
+K:\Docs\work\Projects\C#\Invoice\Invoice\obj\x86\Release\Invoice.EditForm.resources
+K:\Docs\work\Projects\C#\Invoice\Invoice\obj\x86\Release\Invoice.MainForm.resources
+K:\Docs\work\Projects\C#\Invoice\Invoice\obj\x86\Release\Invoice.Properties.Resources.resources
+K:\Docs\work\Projects\C#\Invoice\Invoice\obj\x86\Release\Invoice.csproj.GenerateResource.cache
+K:\Docs\work\Projects\C#\Invoice\Invoice\obj\x86\Release\Invoice.csproj.CoreCompileInputs.cache
+K:\Docs\work\Projects\C#\Invoice\Invoice\obj\x86\Release\Invoice.csproj.CopyComplete
+K:\Docs\work\Projects\C#\Invoice\Invoice\obj\x86\Release\Invoice.exe
+K:\Docs\work\Projects\C#\Invoice\Invoice\obj\x86\Release\Invoice.pdb

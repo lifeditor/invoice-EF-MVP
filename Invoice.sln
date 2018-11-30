@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invoice", "Invoice\Invoice.csproj", "{C457A436-069D-4176-8129-8A72C20EC0BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invoice.Model", "Invoice.Model\Invoice.Model.csproj", "{B39C18DE-5BBE-4218-8CB4-A14661738B9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C457A436-069D-4176-8129-8A72C20EC0BF}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{C457A436-069D-4176-8129-8A72C20EC0BF}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{C457A436-069D-4176-8129-8A72C20EC0BF}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{C457A436-069D-4176-8129-8A72C20EC0BF}.Debug|x86.ActiveCfg = Debug|x86
+		{C457A436-069D-4176-8129-8A72C20EC0BF}.Debug|x86.Build.0 = Debug|x86
+		{C457A436-069D-4176-8129-8A72C20EC0BF}.Release|Any CPU.ActiveCfg = Release|x86
+		{C457A436-069D-4176-8129-8A72C20EC0BF}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{C457A436-069D-4176-8129-8A72C20EC0BF}.Release|Mixed Platforms.Build.0 = Release|x86
+		{C457A436-069D-4176-8129-8A72C20EC0BF}.Release|x86.ActiveCfg = Release|x86
+		{C457A436-069D-4176-8129-8A72C20EC0BF}.Release|x86.Build.0 = Release|x86
+		{B39C18DE-5BBE-4218-8CB4-A14661738B9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B39C18DE-5BBE-4218-8CB4-A14661738B9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B39C18DE-5BBE-4218-8CB4-A14661738B9A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B39C18DE-5BBE-4218-8CB4-A14661738B9A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B39C18DE-5BBE-4218-8CB4-A14661738B9A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B39C18DE-5BBE-4218-8CB4-A14661738B9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B39C18DE-5BBE-4218-8CB4-A14661738B9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B39C18DE-5BBE-4218-8CB4-A14661738B9A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{B39C18DE-5BBE-4218-8CB4-A14661738B9A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{B39C18DE-5BBE-4218-8CB4-A14661738B9A}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

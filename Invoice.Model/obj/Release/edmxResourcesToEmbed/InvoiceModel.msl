@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="invoiceDBModelStoreContainer" CdmEntityContainer="invoiceDBEntities">
+    <EntitySetMapping Name="Articles">
+      <EntityTypeMapping TypeName="invoiceDBModel.Article">
+        <MappingFragment StoreEntitySet="Article">
+          <ScalarProperty Name="CdNumber" ColumnName="CdNumber" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="GrossAmount" ColumnName="GrossAmount" />
+          <ScalarProperty Name="TaxAmount" ColumnName="TaxAmount" />
+          <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+          <ScalarProperty Name="Tax" ColumnName="Tax" />
+          <ScalarProperty Name="NetAmount" ColumnName="NetAmount" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Units" ColumnName="Units" />
+          <ScalarProperty Name="ArtName" ColumnName="ArtName" />
+          <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Invoices">
+      <EntityTypeMapping TypeName="invoiceDBModel.Invoice">
+        <MappingFragment StoreEntitySet="Invoice">
+          <ScalarProperty Name="OptionField" ColumnName="OptionField" />
+          <ScalarProperty Name="OpCode" ColumnName="OpCode" />
+          <ScalarProperty Name="CustomerKPP" ColumnName="CustomerKPP" />
+          <ScalarProperty Name="CustomerINN" ColumnName="CustomerINN" />
+          <ScalarProperty Name="CustomerAddr" ColumnName="CustomerAddr" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="OrderNum" ColumnName="OrderNum" />
+          <ScalarProperty Name="DeliverTo" ColumnName="DeliverTo" />
+          <ScalarProperty Name="DeliverFrom" ColumnName="DeliverFrom" />
+          <ScalarProperty Name="SupplierKPP" ColumnName="SupplierKPP" />
+          <ScalarProperty Name="SupplierINN" ColumnName="SupplierINN" />
+          <ScalarProperty Name="SupplierAddr" ColumnName="SupplierAddr" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+          <ScalarProperty Name="InvoiceNum" ColumnName="InvoiceNum" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Params">
+      <EntityTypeMapping TypeName="invoiceDBModel.Param">
+        <MappingFragment StoreEntitySet="Param">
+          <ScalarProperty Name="InvNumYear" ColumnName="InvNumYear" />
+          <ScalarProperty Name="InvNumCnt" ColumnName="InvNumCnt" />
+          <ScalarProperty Name="InvNumPref" ColumnName="InvNumPref" />
+          <ScalarProperty Name="DeliverFrom" ColumnName="DeliverFrom" />
+          <ScalarProperty Name="SupplierKPP" ColumnName="SupplierKPP" />
+          <ScalarProperty Name="SupplierINN" ColumnName="SupplierINN" />
+          <ScalarProperty Name="SupplierAddr" ColumnName="SupplierAddr" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

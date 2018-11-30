@@ -1,0 +1,6 @@
+K:\Docs\work\Projects\C#\Invoice\Invoice.Model\bin\Release\Invoice.Model.dll.config
+K:\Docs\work\Projects\C#\Invoice\Invoice.Model\bin\Release\Invoice.Model.dll
+K:\Docs\work\Projects\C#\Invoice\Invoice.Model\bin\Release\Invoice.Model.pdb
+K:\Docs\work\Projects\C#\Invoice\Invoice.Model\obj\Release\Invoice.Model.csproj.CoreCompileInputs.cache
+K:\Docs\work\Projects\C#\Invoice\Invoice.Model\obj\Release\Invoice.Model.dll
+K:\Docs\work\Projects\C#\Invoice\Invoice.Model\obj\Release\Invoice.Model.pdb

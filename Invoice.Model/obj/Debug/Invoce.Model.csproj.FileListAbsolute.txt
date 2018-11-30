@@ -1,0 +1,4 @@
+K:\Docs\work\Projects\C#\Invoice\Invoce.Model\bin\Debug\Invoce.Model.dll
+K:\Docs\work\Projects\C#\Invoice\Invoce.Model\bin\Debug\Invoce.Model.pdb
+K:\Docs\work\Projects\C#\Invoice\Invoce.Model\obj\Debug\Invoce.Model.dll
+K:\Docs\work\Projects\C#\Invoice\Invoce.Model\obj\Debug\Invoce.Model.pdb
