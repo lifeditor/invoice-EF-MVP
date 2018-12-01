@@ -7,9 +7,9 @@ Visual Studio 2017
 
 БД SQL Server/SQL Express
 
-Скрипт invoiceDB.sql в ./Invoice/Database
+Скрипт БД invoiceDB.sql в ./Invoice/Database
 
 Строка подключения к БД (connection string) для сборки в xml файле invoice.exe.config
 
-Connection string в исходниках .Invoice/App.config
+Connection string в исходниках ./Invoice/App.config
 
