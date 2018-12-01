@@ -45,6 +45,14 @@ namespace Invoice
         public event EventHandler DeleteClick;
         public event EventHandler<CustomEventArgs> InvoiceCheck;
 
+        private void ClearArticle(object obj)
+        {
+            if (DeleteClick != null)
+                DeleteClick(obj, EventArgs.Empty);
+
+            articleBindingSource.Remove(obj);
+        }
+
         private void EditForm_Shown(object sender, EventArgs e)
         {
             dgvArticleList.DataSource = articleBindingSource;
@@ -68,24 +76,9 @@ namespace Invoice
             {
                 object obj = articleBindingSource.Current;
 
-                if (DeleteClick != null)
-                    DeleteClick(obj, EventArgs.Empty);
-
+                ClearArticle(obj);
                 if (articles.Contains(obj))
                     articles.Remove(obj);
-                
-                articleBindingSource.RemoveCurrent();
-            }
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            foreach (object article in articles)
-            {
-                if (DeleteClick != null)
-                    DeleteClick(article, EventArgs.Empty);
-                
-                articleBindingSource.Remove(article);
             }
         }
 
@@ -118,8 +111,15 @@ namespace Invoice
 
         private void EditForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-           if (DialogResult != DialogResult.Cancel)
-               e.Cancel = !IsValidate();
+            if (DialogResult == DialogResult.OK)
+            {
+                e.Cancel = !IsValidate();
+            }
+            else
+            {
+                foreach (object article in articles)
+                    ClearArticle(article);
+            }
         }
     }
 }
